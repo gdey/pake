@@ -27,11 +27,11 @@ __END__
 
 =head1 NAME
 
-    Pake::Rule
+Pake::Rule
 
 =head1 SYNOPSIS
 
-    Right now Rules should not be extended
+Right now Rules should not be extended.
 
 =head1 Description
 

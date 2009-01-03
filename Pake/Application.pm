@@ -204,58 +204,56 @@ __END__
 
 =head1 NAME
 
-    Pake::Application 
+Pake::Application 
 
 =head1 SYNOPSIS
 
-    You probably won't mess with the code in here.
-    If you are accessing Pake::Application enviroment from Pakefile you can get any information possesed by it.
+You probably won't mess with the code in here.
+If you are accessing Pake::Application enviroment from Pakefile you can get any information possesed by it.
 
-=head2 Usage
-#In Pakefile
-task {
-     Pake::Application::get_task("Any_task_created_earlier")->execute().
-} "test"
+=head1 Usage
+
+	#In Pakefile script
+	task {
+		$task = Pake::Application::get_task("Any_task_created_earlier");
+		$task->execute();
+	} "test"
 
 =head1 DESCRIPTION
 
-Pake::Application is an enviroment of pake file. It contains all ifnormation about current execution.
+Pake::Application is an enviroment of pake. It contains all information about current execution.
 
-=head2 Methods
+=head1 Methods
 
 Overview of all methods avalailable in the Syntax.pm
 
-=over 12
-
-=item C<Pakefile>
+B<Pakefile>
 
     You can get executed file name. During execution only get have any sense.
 
-=item C<Env>
+B<Env>
 
     Returns pake env variables
 
-=item C<printTasks>
+B<printTasks>
 
     Print all tasks with descriptions
 
-=item C<printDeps>
+B<printDeps>
 
     Print all tasks with dependencies
 
-=item C<options>
+B<options>
 
     options passed to pake
 
-=item C<get_task>
+B<get_task>
 
     returns Task object which name was specified as parameter
 
-=item C<runTask>
+B<runTask>
 
     runs Task object which name was specified as parameter
- 
-=back
 
 =cut
 

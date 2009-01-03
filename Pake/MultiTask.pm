@@ -45,22 +45,18 @@ __END__
 
 =head1 Description
 
-MultiTask task, executes dependencies in parrallel. Right now ther is no guarantee that dependencies want be run more then once
+MultiTask task, executes dependencies in parallel. Right now there is no guarantee that dependencies want be run more then once
 
 =head2 Methods
 
 Overview of overriden methods in the FileTask object
 
-=over 12
+B<invoke_prerequisites>
 
-=item C<invoke_prerequisites>
+Parrallel invocation
 
-    Parrallel invokation
-
-=item C<inoker>
+B<inoker>
     
-    Thread method invoke
-
-=back
+Thread method invoke
 
 =cut

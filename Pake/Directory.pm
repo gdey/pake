@@ -32,7 +32,7 @@ __END__
 
 =head1 NAME
 
-    Pake::Directory
+Pake::Directory
 
 =head1 SYNOPSIS
 
@@ -43,18 +43,14 @@ __END__
 
 =head1 Description
 
-Directory task, needs to execute only if
+Directory task, needs to execute only if the directory does not exists
 
-=head2 Methods
+=head1 Methods
 
-Overview of overriden methods in the Direcotry object
+Overview of overriden methods in the Directory object
 
-=over 12
+B<needed>
 
-=item C<needed>
-
-    Needed only if the specified directory does not exists
-
-=back
+Needed returns 1 only if the specified directory does not exists
 
 =cut

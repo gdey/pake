@@ -25,7 +25,7 @@ sub timestamp{
 
 =head1 NAME
 
-    Pake::FileCreationTask
+Pake::FileCreationTask
 
 =head1 SYNOPSIS
 
@@ -38,20 +38,16 @@ sub timestamp{
 
 File creation task, executes if the file with the same name does not exists
 
-=head2 Methods
+=head1 Methods
 
 Overview of overriden methods in the FileTask object
 
-=over 12
+B<needed>
 
-=item C<needed>
+Needed only if the specified file does not exists
 
-    Needed only if the specified file does not exists
-
-=item C<timestamp>
+B<timestamp>
     
-    Returns file timestamp
-
-=back
+Returns file timestamp. If the file don't exists it returns... nothing
 
 =cut

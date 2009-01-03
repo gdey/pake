@@ -119,54 +119,59 @@ __END__
 
 =head1 Description
 
-Task is highly coupled with Pake::Application. The constructor registers new blessed Task variable in the Pake::Application. Task is a starting point to add new functionality to pake. You should extend it, and call the super constructor or  manually add task in Pake::Application 
+Task is highly coupled with Pake::Application. The constructor registers new blessed Task variable in the Pake::Application. Task is a starting point to add new functionality to pake. You should extend it, and call the super constructor or manually add task in Pake::Application. Refer to source.
 
-=head2 Methods
+=head1 Methods
 
-Overview of all methods avalailable in the Syntax.pm
+B<new>
 
-=over 12
+Task constructor.
 
-=item C<new>
+First parameter is a block of code, executed when the task is invoked.
+Second parameter is name of the task (you specify it during pake usage, pake task1) pointing to the table with dependendant tasks 
 
-First parameter is block of code, executed when the task is invoked.
-Second parameter is name of the task (you specify it during pake usage, pake task1) pointing to the table with dependendant tasks (task {} "name" => ["dep1","dep2"];
+	task {
+	} "name" => ["deps"];
 
-=item C<execute>
+B<execute>
 
-    C<$task->execute()>
-    It runs the code block passed in the constructor
+	$task->execute();
 
-=item C<invoke>
+It runs the code block passed in the constructor
 
-    C<$task->invoke()>
-    The method invokes all dependant tasks, checks if the file changed and eventually executes the task
+B<invoke>
 
-=item C<invoke_prerequisites>
+	$task->invoke();
 
-    invokes all task dependencies
+The method invokes all dependant tasks, checks if the file changed and eventually executes the task
 
-=item C<needed>
+B<invoke_prerequisites>
 
-    check if exection of task is needed
-    default 1
+	$task->invoke_prerequisites();
 
-=item C<timestamp>
+invoke all task dependencies.
 
-    this method should return the file stamp if the task is a file abstraction
+B<needed>
 
-=item C<desc>
+check if exection of task is needed: default 1.
+
+Override it for special behaviour.
+
+B<timestamp>
+
+This method should return the file stamp if the task is a file abstraction. Right now it checks if file is newer then dependencies. If yes then it executes.
+Can be chaned to some hash checking or some other fancy idea.
+
+B<desc>
 
     Set/Get method for task description
 
-=item C<name>
+B<name>
 
     Set/Get method for task name
 
-=item C<code>
+B<code>
 
     Set/Get method for task code
- 
-=back
 
 =cut
